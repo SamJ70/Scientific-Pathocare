@@ -116,7 +116,7 @@ function App() {
 
 const sendEmail = async (formData, setStep) => {
   try {
-      const response = await fetch("https://scientific-pathocare-2.onrender.com", {
+      const response = await fetch("https://scientific-pathocare-2.onrender.com/send-email", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData)
