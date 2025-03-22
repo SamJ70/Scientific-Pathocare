@@ -6,7 +6,13 @@ import nodemailer from "nodemailer";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+    origin: "https://scientific-pathocare.netlify.app", // ✅ Replace with your Netlify frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],  // Allow necessary headers
+    credentials: true  // Allow cookies if needed
+}));
 
 const transporter = nodemailer.createTransport({
     host: "smtp-relay.brevo.com",  // Brevo SMTP host
